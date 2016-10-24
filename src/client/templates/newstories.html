@@ -1,0 +1,20 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h1>{{ vm.hello }}</h1>
+    </div>
+</div>
+
+<ul class="news list-group col-sm-12" dir-paginate="newStory in vm.newStories | filter:search  | itemsPerPage: 10">
+    <li class="list-group-item"><span>User Name</span>: <a ui-sref="postlistfornewsuser({userName:newStory.by})">{{ newStory.by }}</a></li>
+    <li class="list-group-item"><span>Story Title</span>: {{ newStory.title }}</li>
+    <li class="list-group-item"><span>Story Link</span>: <a href="{{ newStory.url }}" target="_blank">{{ newStory.url }}</a></li>
+    <li class="list-group-item" ng-if="newStory.kids"><span>Comments( {{ newStory.kids.length }} )</span>: <a ui-sref="newstorycomments({id:newStory.id})">Click to view comments</a></li>
+    <li class="list-group-item"><span>Post Time</span>: {{ newStory.time * 1000 | date:'d MMMM yyyy HH:mm:ss ' }}</li>
+</ul>
+<div class="col-sm-6">
+    <dir-pagination-controls
+            max-size="10"
+            direction-links="true"
+            boundary-links="true">
+    </dir-pagination-controls>
+</div>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <meta name="Jobs" content="Jobs | Jiffy Lube Lucor"/>
+    <title>Blog</title>
+
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="/bower_components/toastr/toastr.css" />
+    <!-- endbower -->
+
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/.tmp/styles.css">
+    <!-- endinject -->
+
+
+</head>
+<body ng-app="blog" class="container ng-cloak" ng-cloak>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <ul class="nav nav-pills row">
+                <li role="presentation" ui-sref-active="active"><a ui-sref="home">Home</a></li>
+                <li role="presentation" ui-sref-active="active"><a ui-sref="topstories">Top Stories</a></li>
+                <li role="presentation" ui-sref-active="active"><a ui-sref="newstories">New Stories</a></li>
+                <li role="presentation" ui-sref-active="active"><a ui-sref="beststories">Best Stories</a></li>
+                <li role="presentation" ui-sref-active="active"><a ui-sref="askstories">Ask Stories</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <form class="form-inline">
+        <div class="form-group">
+            <lable> Search</lable>
+            <input type="text" ng-model="search" class="form-control" placeholder="Search">
+        </div>
+    </form>
+    <br>
+    <div class="row">
+        <div ui-view></div>
+    </div>
+
+
+
+
+
+
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/bower_components/moment/moment.js"></script>
+    <script src="/bower_components/toastr/toastr.js"></script>
+    <script src="/bower_components/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/bower_components/angular-resource/angular-resource.js"></script>
+    <script src="/bower_components/angularUtils-pagination/dirPagination.js"></script>
+    <!-- endbower -->
+
+    <!-- inject:js -->
+    <script src="/src/client/app.js"></script>
+    <script src="/src/client/controllers/AnimationCtrl.js"></script>
+    <script src="/src/client/controllers/AskStoriesCtrl.js"></script>
+    <script src="/src/client/controllers/BestStoriesCtrl.js"></script>
+    <script src="/src/client/controllers/NewStoriesCtrl.js"></script>
+    <script src="/src/client/controllers/TopStoriesCtrl.js"></script>
+    <script src="/src/client/services/common.services.js"></script>
+    <script src="/src/client/services/hackerNewsDataResource.js"></script>
+    <!-- endinject -->
+
+</body>
+</html>

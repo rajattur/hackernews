@@ -1,0 +1,20 @@
+<h3>USER POST LIST</h3>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h1>List Of Post by: {{ vm.submitted[0].by }}</h1>
+    </div>
+</div>
+
+<ul class="news list-group col-sm-12" dir-paginate="userPost in vm.submitted | filter:search | itemsPerPage: 10">
+    <li class="list-group-item"><span>Story Title</span>: {{ userPost.title }}</li>
+    <li class="list-group-item"><span>Post Time</span>: {{ userPost.time * 1000 | date:'d MMMM yyyy HH:mm:ss ' }}</li>
+</ul>
+
+<div class="col-sm-6">
+    <dir-pagination-controls
+            max-size="10"
+            direction-links="true"
+            boundary-links="true">
+    </dir-pagination-controls>
+</div>

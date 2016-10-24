@@ -1,0 +1,18 @@
+<div ng-cloak class="panel panel-primary" ng-if="vm.name && vm.comments[0].type">
+    <div class="panel-heading">
+        <h1>{{ vm.noComments }}{{ vm.comments[0].type }} for {{ vm.name }}'s Post</h1>
+    </div>
+</div>
+
+<ul class="news list-group col-sm-12" dir-paginate="newStoryComments in vm.comments | filter:search | itemsPerPage: 10">
+    <li class="list-group-item"><span>User Name</span>: {{ newStoryComments.by }}</li>
+    <li class="list-group-item"><span>Story Title</span>: {{ newStoryComments.text }}</li>
+</ul>
+
+<div class="col-sm-6">
+    <dir-pagination-controls
+            max-size="10"
+            direction-links="true"
+            boundary-links="true">
+    </dir-pagination-controls>
+</div>

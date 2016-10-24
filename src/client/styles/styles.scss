@@ -1,0 +1,83 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.navbar-default {
+  background-color: #000000;
+  border-color: #000000;
+  box-shadow: 4px 10px 14px #888888;
+  
+  a {
+    color: #ffffff;
+  }
+
+}
+
+.news {
+  list-style: none;
+
+  span {
+    font-weight: bolder;
+  }
+}
+
+form {
+  margin-top: 78px;
+
+  lable {
+    font-weight: bolder;
+  }
+}
+
+.list-group-item {
+  box-shadow: 3px 6px 14px #888888;
+}
+
+.panel-primary {
+  border-color: transparent;
+  .panel-heading {
+    background-color: #000000;
+    border-color: #000000;
+    box-shadow: 4px 10px 14px #888888;
+  }
+}
+
+//Spinning text
+
+  $n: 200;
+  $t: 120s;
+
+  .sp {
+    display: flex;
+    justify-content: center;
+    height: 300vh;
+    overflow: hidden;
+    text-align: center;
+    perspective: 600vh;
+  }
+
+  .spinner {
+    transform-style: preserve-3d;
+  }
+
+  .SpinningText {
+    animation: rotate $t linear infinite;
+  }
+
+  .SpinningText::before {
+    content: "";
+  }
+
+  @for $i from 2 through $n {
+    .SpinningText:nth-child(#{$i}) {
+      animation-duration: $t / $i;
+
+      &::before {
+        content: "";
+      }
+    }
+  }
+
+  @keyframes rotate {
+    to { transform: rotateY(360deg) }
+  }
